@@ -1,0 +1,19 @@
+// to make changes in DTS file. overlay file overwrite them
+// there is a default dts file in build/zephyr/zephyr.dts
+
+&uart0 {
+	current-speed = <115200>;
+};
+
+
+// Here check how many i2c you have in device tree file of your
+// board and then choose right one, whereever you want to connect
+// sensor too. Here our i2c slave that we want to connect to 
+// our board is 0x4a. 
+&i2c0 {
+    mysensor: mysensor@4a{
+        compatible = "i2c-device";
+        reg = < 0x4a >;
+        label = "MYSENSOR";
+    };
+};

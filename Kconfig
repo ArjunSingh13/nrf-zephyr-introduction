@@ -1,0 +1,8 @@
+# add your new libraries here and you can by default leave them disabled
+# now you can enable them if needed in prj.conf
+
+source "Kconfig.zephyr"
+
+config ADDFUNCTION
+	bool "Enable my function"
+	default n
